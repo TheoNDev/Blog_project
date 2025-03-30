@@ -1,0 +1,53 @@
+@use "../mixins.scss" as m;
+@use "../variables.scss" as v;
+
+.hero {
+  @include m.flex(column, center, center);
+  padding: 2rem;
+  color: v.$text-color;
+  &__title {
+    font-size: 3rem;
+    width: 0;
+
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid v.$background-color;
+    animation: titleTyping 1.5s steps(20) forwards;
+    //, blinkText 0.5s step-end 0s 7;
+  }
+  &__underTitle {
+    font-size: v.$font-size-title;
+  }
+  &__btn {
+    @include m.button(20%);
+  }
+}
+
+@keyframes titleTyping {
+  from {
+    width: 0;
+  }
+  to {
+    width: 40%;
+  }
+}
+@keyframes underTitleTyping {
+  from {
+    width: 0;
+  }
+  to {
+    width: 38%;
+  }
+}
+
+@keyframes blinkText {
+  0% {
+    border-color: black;
+  }
+  50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: black;
+  }
+}

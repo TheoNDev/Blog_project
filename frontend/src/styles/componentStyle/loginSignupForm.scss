@@ -1,0 +1,44 @@
+@use "../mixins.scss" as m;
+@use "../variables.scss" as v;
+
+.section {
+  @include m.flex(column, center, center);
+  margin: 100px auto;
+  width: 80%;
+  max-width: 500px;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  .error {
+    color: red;
+  }
+  &__title {
+    font-size: v.$font-size-title;
+    font-style: bold;
+    color: v.$primary-color;
+  }
+  &__form {
+    @include m.flex(column, center, center);
+    width: 70%;
+    &__input {
+      @include m.input(100%, 30px);
+    }
+    &__submitBtn {
+      @include m.button;
+    }
+    &__switchForm {
+      font-size: v.$font-size-mini;
+      &__switch {
+        cursor: pointer;
+        border: none;
+        background: none;
+        color: v.$accent-color;
+        &:hover {
+          color: v.$link-hover;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+@use "./styles/variables.scss" as v;
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  font-family: v.$font-family;
+  background-color: v.$background-color;
+}

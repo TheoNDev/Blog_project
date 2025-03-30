@@ -1,0 +1,19 @@
+// src/styles/variables.scss
+$primary-color: #333333; // Dark Charcoal
+$secondary-color: #4caf50; // Medium Green
+$accent-color: #ffc107; // Amber
+$background-color: #f9f9f9; // Light Grayish White
+$text-color: #212121; // Nearly Black
+$placeholder-color: #777777;
+
+// Additional Colors
+$input-border: $primary-color;
+$input-focus: $secondary-color;
+$button-hover: #388e3c; // Predefined darker Green
+$link-hover: #ffa000; // Predefined darker Amber
+
+$font-family: "Roboto", sans-serif;
+$font-size-mini: 0.75rem;
+$font-size-base: 1rem;
+$font-size-undertitle: 1.25rem;
+$font-size-title: 1.5rem;

@@ -1,0 +1,103 @@
+@use "../mixins.scss" as m;
+@use "../variables.scss" as v;
+
+.create-blog {
+  @include m.flex(column, center, center);
+  width: 100%;
+
+  &__top-section {
+    margin-top: 100px;
+    &__title {
+      font-size: v.$font-size-title;
+    }
+  }
+  &__middle-section {
+    width: 90%;
+    @include m.flex(column, center, center);
+    &__form {
+      width: 100%;
+      @include m.flex(column, center, center);
+      &__top {
+        @include m.flex(row, center, center);
+        width: 100%;
+        &__title {
+          @include m.input(150px, $mb: 0);
+          margin: 0 10px;
+        }
+        &__slug {
+          @include m.input(150px, $mb: 0);
+          margin: 0 10px;
+        }
+        &__categories-tags {
+          margin: 0 10px;
+          &__input {
+            @include m.input(150px, $mb: 0);
+            margin: 0 10px;
+          }
+          &__btn {
+            @include m.button(120px, 7px);
+            margin: 0 10px;
+          }
+        }
+      }
+      &__middle {
+        @include m.flex(column, flex-start, flex-start);
+        width: 100%;
+        &__selected-categories-tags {
+          @include m.flex(row, center, center);
+          &__title {
+            font-size: v.$font-size-undertitle;
+          }
+          &__categories-tags {
+            @include m.flex(row, center, center);
+            &__category-tag {
+              @include m.button(fit-content, 0.9rem);
+              @include m.flex(row, center, center);
+              margin: 5px;
+              border-radius: 20px;
+              cursor: auto;
+              &:hover {
+                background-color: v.$secondary-color;
+              }
+              &__remove {
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+      &__text-editor {
+        width: 100%;
+      }
+    }
+  }
+  &__bottom-section {
+    margin: 100px 0;
+    width: 100%;
+    @include m.flex(column, center, center);
+
+    &__schedule {
+      width: 30%;
+      @include m.flex();
+      &__date {
+        @include m.input(150px, $mb: 0);
+        margin: 0 1rem;
+      }
+      &__time {
+        @include m.input(150px, $mb: 0);
+      }
+      &__btn {
+        margin: 0 2rem;
+        @include m.button(50%, 5px);
+      }
+    }
+    &__bottom {
+      width: 100%;
+      @include m.flex(row, center, center);
+      &__btn {
+        @include m.button(15%, 10px);
+        margin: 2rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@use "../mixins.scss" as m;
+@use "../variables.scss" as v;
+
+.categories {
+  @include m.flex(column, center, center);
+
+  margin: 100px auto;
+  &__title {
+    font-size: v.$font-size-title;
+  }
+  &__tags {
+    @include m.flex(row, center, center);
+    width: 80%;
+    margin: auto;
+    flex-wrap: wrap;
+    &__tag {
+      @include m.button(fit-content, 0.9rem);
+      margin: 5px;
+      border-radius: 20px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .categories {
+    &__tags {
+      box-sizing: border-box;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin: 0;
+      width: 100vw;
+      @include m.horScroll(0.1rem);
+      padding-left: 0;
+      padding-right: 0;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      &__tag {
+        height: 50px;
+      }
+    }
+  }
+}

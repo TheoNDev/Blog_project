@@ -1,0 +1,18 @@
+@use "../mixins.scss" as m;
+@use "../variables.scss" as v;
+
+.homepage-blogs {
+  @include m.flex(column, center, center);
+  padding: 2rem;
+  color: v.$text-color;
+  &__top {
+    &__title {
+      font-size: v.$font-size-title;
+    }
+  }
+  &__bottom {
+    &__btn {
+      @include m.button();
+    }
+  }
+}
